@@ -1,0 +1,100 @@
+<!-- Copyright (c) Microsoft. All rights reserved. -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:id="@+id/person_group_name_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/person_group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="person group name" />
+
+        <EditText
+            android:id="@+id/edit_person_group_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/person_group_name"
+            android:layout_toEndOf="@id/person_group_name"
+            android:singleLine="true"
+            android:maxLength="30"
+            android:hint="type in person group name" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/person_group_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/info"
+        android:layout_marginBottom="5dp"
+        android:text="- Tap on a person to edit.\n- Long press to delete." />
+
+    <GridView
+        android:id="@+id/gridView_persons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/person_group_name_view"
+        android:layout_above="@id/person_group_tip"
+        android:layout_marginBottom="5dp"
+        android:numColumns="3"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/button_bar"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:id="@id/button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/add_person"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="add person"
+            android:onClick="addPerson"
+             />
+
+        <Button
+            android:id="@id/done_and_save"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="done and save"
+            android:onClick="doneAndSave"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
